@@ -11,14 +11,21 @@
           <tbody>
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td>{{recipe.title}}</td>
-              <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="removeRecipe(recipe)"></span></td>
+              <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="showDetail(recipe)"></span></td>
+              <!-- <td><router-link :to="{name: 'RecipeDetail', props: {id: 101}}"> -->
+              <!-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"  ></span></router-link></td> -->
             </tr>
           </tbody>
         </table>
+        <hr>
+        <div v-show="selectedRecipe">
+          <recipe-detail selected= "selectedRecipe"></recipe-detail>
+        </div>
       </div>
 </template>
 <script>
 import firebase from '@/components/firebase-init';
+import RecipeDetail from '@/components/RecipeDetail'
 
 export default {
   name: 'Recipebox',
@@ -27,11 +34,7 @@ export default {
   },
     data () {
     return {
-      newRecipe: {
-          title: '',
-          ingredients: [],
-          description: ''
-      }
+      selectedRecipe:null
     }
   },
   
@@ -42,11 +45,15 @@ export default {
         this.newRecipe.ingredients = [];
         this.newRecipe.description = '';
       },
-      removeBook: function (recipe) {
+
+      showDetail: function (recipe) {
         // firebase.recipesRef.child(recipe['.key']).remove()
-        toastr.success('Recipe removed successfully')
+       this.selectedRecipe= recipe;
       }
     },
+    components: {
+      "recipe-detail":RecipeDetail
+    }
 }
 </script>
 
