@@ -13,6 +13,10 @@
             <label for="recipeTitle">Title:</label>
             <input type="text" id="recipeTitle" class="form-control" v-model="newRecipe.title">
           </div>
+          <div class="form-group">
+            <label for="recipeDescription">Description:</label>
+            <textarea rows ="5" cols="50" id="recipeDescription" class="form-control" v-model="newRecipe.description"> </textarea>
+          </div>
           <input type="submit" class="btn btn-primary" value="Add Recipe">
         </form>
       </div>
@@ -26,7 +30,7 @@
           <thead>
             <tr>
               <th>Title</th>
-              <th>Ingredients</th>
+              <th>Description</th>
               <th></th>
             </tr>
           </thead>
