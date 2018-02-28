@@ -31,7 +31,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="recipe in recipes">
+            <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td>{{recipe.title}}</td>
               <td>{{recipe.description}}</td>
               <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeRecipe(recipe)"></span></td>
@@ -45,44 +45,32 @@
 
 
 <script>
-import Firebase from 'firebase'
-let config = {
-    apiKey: "AIzaSyC6tc3IppNH21xgta6KSTAd4hmJT0iZ1L8",
-    authDomain: "recipe-box-162b0.firebaseapp.com",
-    databaseURL: "https://recipe-box-162b0.firebaseio.com",
-    projectId: "recipe-box-162b0",
-    storageBucket: "recipe-box-162b0.appspot.com",
-    messagingSenderId: "423983415012"
-  };
-  
-let app = Firebase.initializeApp(config)
-let db = app.database()
-let recipesRef = db.ref('recipes')
+import firebase from '@/components/firebase-init';
 
 export default {
   name: 'app',
   firebase: {
-    recipes: recipesRef
+    recipes: firebase.recipesRef
   },
     data () {
     return {
       newRecipe: {
           title: '',
-          ingredients: '',
+          ingredients: [],
           description: ''
       }
     }
   },
   
    methods: {
-      addBook: function () {
-        recipesRef.push(this.newRecipe);
+      addRecipe: function () {
+        firebase.recipesRef.push(this.newRecipe);
         this.newRecipe.title = '';
-        this.newRecipe.ingredients = '';
+        this.newRecipe.ingredients = [];
         this.newRecipe.description = '';
       },
       removeBook: function (recipe) {
-        recipesRef.child(recipe['.key']).remove()
+        // firebase.recipesRef.child(recipe['.key']).remove()
         toastr.success('Recipe removed successfully')
       }
     },
