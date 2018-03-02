@@ -1,34 +1,54 @@
 <template>
-  <div id="recipes" class="container">
-    <div class="page-header">
-      <h1>Recipe Box</h1>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Add New Recipe</h3>
-      </div>
-      <div class="panel-body">
-         <form id="form" class="form-inline" v-on:submit.prevent="addRecipe">
-          <div class="form-group">
-            <label for="recipeTitle">Title:</label>
-            <input type="text" id="recipeTitle" class="form-control" v-model="newRecipe.title">
+    <div id="recipes" class="container">
+        <div class="page-header">
+            <h1>Recipe Box</h1>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add New Recipe</h3>
             </div>
-          <div class="form-group">
-            <label for="recipeDescription">Description:</label>
-            <textarea rows ="5" cols="50" id="recipeDescription" class="form-control" v-model="newRecipe.description"> </textarea>
-          </div>
-          <div><input type="button" class="btn btn-primary" v-on:click="addIngredient" value="Add Ingredient"></div>
-            <div v-show="newRecipe.ingredients.length > 0">
-            <ul>
-                <li V-for="(ingredient,index) in newRecipe.ingredients" v-bind:key="index">ingredient</li>
-            </ul>
-          </div>
-
-          <input type="submit" class="btn btn-primary" value="Add Recipe">
-        </form>
-      </div>
+            <div class="panel-body">
+            <!-- form for recipe -->
+                <form id="form" class="form-inline" v-on:submit.prevent="addRecipe">
+                    <div class="form-group">
+                        <label for="recipeTitle">Title:</label>
+                        <input type="text" id="recipeTitle" class="form-control" v-model="newRecipe.title">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipeDescription">Description:</label>
+                        <textarea rows ="5" cols="50" id="recipeDescription" class="form-control" v-model="newRecipe.description"> </textarea>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Add Recipe">
+                </form>
+                <div>
+                    <input type="button" class="btn btn-primary" v-on:click="addIngredient" value="Add Ingredient">
+                </div>  
+                <div>
+                    <ul>
+                        <li V-for="(ingredient,index1) in newRecipe.ingredients" v-bind:key="index1">ingredient</li>
+                    </ul>
+                </div>
+                        <!-- form for ingredients -->
+                <!-- <div v-show-if="addIngredient=true>  -->
+                <div>    
+                    <form id="addIngredient" class="form-inline" v-on:submit.prevent="addIngredient">
+                        <div class="form-group">
+                            <label for="ingredientItem">Item:</label>
+                            <input type="text" id="ingredientItem" class="form-control" v-model="newIngredient.item">
+                        </div>
+                        <div class="form-group">
+                            <label for="ingredinetQuantity">Quantity:</label>
+                            <input type="text" id="ingredientQuantity" class="form-control" v-model="newIngredient.quantity">
+                        </div> 
+                        <div class="form-group">
+                            <label for="ingredientMeasure">Measure:</label>
+                            <input type="text" id="ingredientMeasure" class="form-control" v-model="newIngredient.measure">
+                        </div> 
+                    </form> 
+                </div> 
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 
@@ -46,7 +66,8 @@ export default {
           title: '',
           ingredients: [],
           description: ''
-      }
+      },
+      addIngredientFlag:false 
     }
   },
   

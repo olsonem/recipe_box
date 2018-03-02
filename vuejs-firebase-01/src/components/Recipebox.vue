@@ -1,23 +1,24 @@
 <template>
   <div id="recipebox" class="container">
       <h1>Recipe Box</h1>  
-       
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(recipe, index) in recipes" v-bind:key="index">
-              <td>{{recipe.title}}</td>
-              <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="showDetail(recipe)"></span></td>
-              <!-- <td><router-link :to="{name: 'RecipeDetail', props: {id: 101}}"> -->
-              <!-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"  ></span></router-link></td> -->
-            </tr>
-          </tbody>
-        </table>
+       <div class="container">
+          <table class="table table-fixed">
+            <thead>
+              <tr>
+                <th class="col-xs-3">Title</th>
+                <th class="col xs-9">View Recipe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(recipe, index) in recipes" v-bind:key="index">
+                <td class="col-xs-3">{{recipe.title}}</td>
+                <td class="col-xs-9"><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="showDetail(recipe)"></span></td>
+                <!-- <td><router-link :to="{name: 'RecipeDetail', props: {id: 101}}"> -->
+                <!-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"  ></span></router-link></td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <hr>
         <div v-show="selectedRecipe">
           <recipe-detail v-bind:selected= "selectedRecipe"></recipe-detail>

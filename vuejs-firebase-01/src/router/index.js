@@ -12,6 +12,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Recipebox',
+      component: Recipebox
+    },
+    {
+      path: '/new',
       name: 'RecipeEntry',
       component: RecipeEntry
     }

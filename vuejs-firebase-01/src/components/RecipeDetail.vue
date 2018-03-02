@@ -2,6 +2,8 @@
   <div id="RecipeDetail" class="container">
       <h1>Recipe Detail</h1> 
         <p>Title:{{selected.title}}</p>
+        <p>Ingredients:{{selected.ingredients}}</p>
+        <p>Description:{{selected.description}}</p>
   </div> 
 
 </template>
