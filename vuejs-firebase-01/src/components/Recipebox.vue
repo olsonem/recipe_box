@@ -1,6 +1,7 @@
 <template>
   <div id="recipebox" class="container">
       <h1>Recipe Box</h1>  
+       
         <table class="table table-striped">
           <thead>
             <tr>
@@ -19,7 +20,7 @@
         </table>
         <hr>
         <div v-show="selectedRecipe">
-          <recipe-detail selected= "selectedRecipe"></recipe-detail>
+          <recipe-detail v-bind:selected= "selectedRecipe"></recipe-detail>
         </div>
       </div>
 </template>
@@ -65,5 +66,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+
 }
 </style>

@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Recipes from '@/components/Recipes'
 import Recipebox from '@/components/Recipebox'
 import RecipeDetail from '@/components/RecipeDetail'
+import RecipeEntry from '@/components/RecipeEntry'
 
 Vue.use(Router)
 
@@ -11,14 +12,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Recipebox',
-      component: Recipebox
-    },
-    {
-      path: '/recipedetail',
-      name: 'RecipeDetail',
-      props: true,
-      component: RecipeDetail
+      name: 'RecipeEntry',
+      component: RecipeEntry
     }
 
   ]
