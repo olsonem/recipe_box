@@ -1,9 +1,17 @@
 <template>
   <div id="RecipeDetail" class="container">
-      <h1>Recipe Detail</h1> 
-        <p>Title:{{selected.title}}</p>
-        <p>Ingredients:{{selected.ingredients}}</p>
-        <p>Description:{{selected.description}}</p>
+    <div id="recipeTitle">
+      <h2>{{selected.title}}</h2>
+      <hr>
+    </div>
+    <div class="container col-xs-6">
+      <h3>Ingredients:</h3>
+      <p> {{selected.ingredients}}</p>
+    </div>
+     <div class="container col-xs-6">
+      <h3>Description:</h3>
+      <p> {{selected.description}}</p>
+    </div>
   </div> 
 
 </template>
@@ -24,12 +32,16 @@ export default {
 </script>
 
 <style>
-#recipes {
+#RecipeDetail {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
+  border-style: double;
+}
+#recipeTitle {
+  text-align: center
 }
 </style>
