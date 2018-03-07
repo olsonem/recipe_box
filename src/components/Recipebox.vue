@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="recipes">
 <div>
     <b-navbar toggleable type="light" variant="light">
         <b-navbar-toggle target="nav_text_collapse"></b-navbar-toggle>
@@ -25,15 +25,12 @@
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td class="col-xs-3">{{recipe.title}}</td>
               <td class="col-xs-9"><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="showDetail(recipe)"></span></td>
-              <!-- <td><router-link :to="{name: 'RecipeDetail', props: {id: 101}}"> -->
-              <!-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"  ></span></router-link></td> -->
             </tr>
           </tbody>
         </table>
       </div>
-        <hr>
-      <div v-show="selectedRecipe">
-         <recipe-detail v-bind:selected= "selectedRecipe"></recipe-detail>
+      <div v-if="selected != null">
+         <recipe-detail v-bind:selected= "selected"></recipe-detail>
       </div>
     </div>
   </div>
@@ -51,21 +48,15 @@ export default {
   },
     data () {
     return {
-      selectedRecipe:null
+      selected:null
     }
   },
   
    methods: {
-      addRecipe: function () {
-        firebase.recipesRef.push(this.newRecipe);
-        this.newRecipe.title = '';
-        this.newRecipe.ingredients = [];
-        this.newRecipe.description = '';
-      },
 
       showDetail: function (recipe) {
         // firebase.recipesRef.child(recipe['.key']).remove()
-       this.selectedRecipe= recipe;
+       this.selected= recipe;
       }
     },
     components: {
