@@ -1,19 +1,9 @@
 <template>
 <div id="recipes">
-<div>
-    <b-navbar toggleable type="light" variant="light">
-        <b-navbar-toggle target="nav_text_collapse"></b-navbar-toggle>
-        <b-navbar-brand>BootstrapVue</b-navbar-brand>
-        <b-collapse is-nav id="nav_text_collapse">
-            <b-navbar-nav>
-                <b-nav-text>Navbar text</b-nav-text>
-            </b-navbar-nav>
-        </b-collapse>
-    </b-navbar>
-</div>
   <div id="recipebox" class="container">
     <h1>Recipe Box</h1>  
       <div class="container">
+
         <table class="table table-fixed">
           <thead>
             <tr>
@@ -50,7 +40,9 @@ export default {
     return {
       selected:null
     }
+    
   },
+  
   
    methods: {
 
