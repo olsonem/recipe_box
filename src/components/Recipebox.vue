@@ -14,7 +14,7 @@
           <tbody>
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td class="col-xs-3">{{recipe.title}}</td>
-              <td class="col-xs-9"><span class="glyphicon glyphicon-eye-open" aria-hidden="true" v-on:click="showDetail(recipe)"></span></td>
+              <td class="col-xs-9"><span class="" aria-hidden="true" v-on:click="showDetail(recipe)"><icon name="eye"></icon></icon></span></td>
             </tr>
           </tbody>
         </table>
@@ -29,6 +29,8 @@
 <script>
 import firebase from '@/components/firebase-init';
 import RecipeDetail from '@/components/RecipeDetail';
+import 'vue-awesome/icons/eye'
+import Icon from 'vue-awesome/components/Icon'
 
 
 export default {
@@ -52,8 +54,9 @@ export default {
       }
     },
     components: {
-      "recipe-detail":RecipeDetail
+      'recipe-detail':RecipeDetail
     }
+    
 }
 </script>
 
