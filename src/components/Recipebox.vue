@@ -2,7 +2,7 @@
 <div id="recipes">
   <div id="recipebox" class="container">
     <h1>Recipe Box</h1>  
-      <div class="container">
+      <div class="container recipe-list">
 
         <table class="table table-fixed">
           <thead>
@@ -14,7 +14,7 @@
           <tbody>
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td class="col-xs-3">{{recipe.title}}</td>
-              <td class="col-xs-9"><span class="" aria-hidden="true" v-on:click="showDetail(recipe)"><icon name="eye"></icon></icon></span></td>
+              <td class="col-xs-9"><span class="" aria-hidden="true" v-on:click="showDetail(recipe)"><icon name="eye"></icon></span></td>
             </tr>
           </tbody>
         </table>
@@ -70,4 +70,13 @@ export default {
   margin-top: 60px;
 
 }
+
+.recipe-list{
+
+    height:200px;
+    overflow-y:auto;
+    width: 100%
+    
+}
+
 </style>
