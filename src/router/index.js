@@ -5,7 +5,7 @@ import Recipes from '@/components/Recipes'
 import Recipebox from '@/components/Recipebox'
 import RecipeDetail from '@/components/RecipeDetail'
 import RecipeEntry from '@/components/RecipeEntry'
-import icon from '@/components/icon'
+import About from '@/components/about'
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(Router)
@@ -24,9 +24,9 @@ export default new Router({
       component: RecipeEntry
     },
     {
-      path: '/icon',
-      name: 'icon',
-      component: icon
+      path: '/about',
+      name: 'About',
+      component: About
     }
 
   ]
