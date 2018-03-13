@@ -4,13 +4,16 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import VueFire from 'vuefire';
+Vue.use(VueFire);
+
+// vue-Bootstrap
+import BootstrapVue from 'bootstrap-vue'
+Vue.use(BootstrapVue);
 
 // font awesome
-import Icon from 'vue-awesome/components/Icon'
+import Icon from 'vue-awesome/components/Icon';
 Vue.component('icon', Icon)
 
-
-Vue.use(VueFire);
 
 let Bootstrap = require('bootstrap')
 import 'bootstrap/dist/css/bootstrap.css'

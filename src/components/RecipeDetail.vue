@@ -6,7 +6,7 @@
     </div>
     <div class="container col-xs-6">
       <h3>Ingredients</h3>
-      <b-table striped hover :ingredients="selected.ingredients"></b-table>
+       <b-table striped hover :items="selected.ingredients"></b-table>
     </div>
     <div class="conttainer col-xs-6">
       <h3>Description:</h3>
@@ -26,12 +26,9 @@ export default {
     return {
       }
     },
-    props: ['selected'],
+    props: ['selected']
 }
-const ingredients = [
-  { item:'', quantity:'', measure:''},
 
-]
 </script>
 
 
