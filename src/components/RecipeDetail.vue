@@ -4,13 +4,15 @@
       <h2>{{selected.title}}</h2>
       <hr>
     </div>
-    <div class="container col-xs-6">
-      <h3>Ingredients</h3>
-       <b-table striped hover :items="selected.ingredients"></b-table>
-    </div>
-    <div class="conttainer col-xs-6">
-      <h3>Description:</h3>
-      <p> {{selected.description}}</p>
+    <div class="row">
+      <div class="container col-xs-9">
+        <h3>Ingredients</h3>
+          <b-table striped hover :items="selected.ingredients"></b-table>
+      </div>
+      <div class="col-xs-6">
+        <h3>Description:</h3>
+        <p> {{selected.description}}</p>
+      </div>
     </div>
   </div> 
 </template>
@@ -43,6 +45,7 @@ export default {
   border-style: double;
 }
 #recipeTitle {
-  text-align: center
+  text-align: center;
+  font-family: 'Calligraffitti', cursive;
 }
 </style>

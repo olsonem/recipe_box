@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="md" type="dark" variant="info">
+    <b-navbar id="navbar" toggleable="md" type="dark" variant="info">
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
       <b-navbar-brand href="#/">Recipe Box</b-navbar-brand>
       <b-collapse is-nav id="nav_collapse">
@@ -23,7 +23,14 @@ export default {
    
 </script>
 
-<style>
+<style scoped>
+
+body {
+  margin: 0;
+  
+};
+
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,5 +38,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background-color: #DCC7AA;
+  
+};
+#navbar {
+  background-color: #f7882f
 }
+
 </style>
