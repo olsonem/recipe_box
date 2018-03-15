@@ -28,7 +28,8 @@ export default {
 body {
   margin: 0;
   
-};
+  
+}
 
 
 #app {
@@ -37,12 +38,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  background-color: #DCC7AA;
+
   
-};
+}
 #navbar {
-  background-color: #f7882f
+  background-color: #6b7a8f !important;
+  font-family: 'Calligraffitti', cursive;
 }
 
 </style>
