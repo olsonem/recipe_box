@@ -5,11 +5,11 @@
       <hr>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12">
         <h3 class="recipeTitle">Ingredients</h3>
           <b-table striped hover :items="selected.ingredients"></b-table>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12">
         <h3 class="recipeTitle">Description:</h3>
         <p> {{selected.description}}</p>
       </div>
