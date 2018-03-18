@@ -13,7 +13,7 @@
           <tbody>
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td class="col-xs-9">{{recipe.title}}</td>
-              <td class="col-xs-3"><span class="btn btn-secondary" aria-hidden="true" v-on:click="showDetail(recipe)"><icon class="icon" name="eye"></icon></span></td>
+              <td class="col-xs-3"><span class="btn btn-secondary view" aria-hidden="true" v-on:click="showDetail(recipe)"><icon class="icon" name="eye"></icon></span></td>
             </tr>
           </tbody>
         </table>
@@ -82,6 +82,11 @@ export default {
     font-family: 'Calligraffitti', cursive;
     margin-top: 15px;
   
+}
+
+#view {
+  
+  background-color: #6b7a8f !important;
 }
 
 </style>
