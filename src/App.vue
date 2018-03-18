@@ -13,7 +13,7 @@
       </b-navbar>
       </div>
       <div class="page-header">
-        <img src="./assets/scroll.png">  
+        <img src="./assets/scroll.png" alt="decorative scroll">  
         <h1 class="recipebox-title">Recipe Box</h1>
 
       </div>
