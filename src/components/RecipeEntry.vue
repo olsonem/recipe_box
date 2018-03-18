@@ -1,14 +1,12 @@
 <template>
     <div id="new-recipe">
         <div id="recipes" class="container">
-            <div class="page-header">
-                <h1>Recipe Box</h1>
-            </div>
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Add New Recipe</h3>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body newreciepe">
                 <!-- form for recipe -->
                     <form id="form" class="form-inline" v-on:submit.prevent="addRecipe">
                         <div class="form-group">
@@ -19,10 +17,10 @@
                             <label for="recipeDescription">Description:</label>
                             <textarea rows ="5" cols="50" id="recipeDescription" class="form-control" v-model="newRecipe.description"> </textarea>
                         </div>
-                            <input type="submit" class="btn btn-primary" :disabled="newRecipe.title.length ==0 || newRecipe.description.length ==0" value="Save Recipe">
+                            <input type="submit" class="btn btn-secondary" :disabled="newRecipe.title.length ==0 || newRecipe.description.length ==0" value="Save Recipe">
                     </form>
-                    <div>
-                        <input type="button" class="btn btn-primary" v-on:click="addIngredient" value="Add Ingredient">
+                    <div class="ingredient-button">
+                        <input type="button" class="btn btn-secondary" v-on:click="addIngredient" value="Add Ingredient">
                     </div>  
                     <div>
                         <ul class="added-ingredients">
@@ -35,7 +33,7 @@
                     </div>
                             <!-- form for ingredients -->
                     <div v-if="addIngredientFlag">    
-                        <form id="addIngredient" class="form-inline" v-on:submit.prevent="saveIngredient">
+                        <form id="addIngredient" class="form-inline entry" v-on:submit.prevent="saveIngredient">
                             <div class="form-group">
                                 <label for="ingredientItem">Item:</label>
                                 <input type="text" id="ingredientItem" class="form-control" v-model="newIngredient.item">
@@ -49,8 +47,8 @@
                                 <input type="text" id="ingredientMeasure" class="form-control" v-model="newIngredient.measure">
                             </div>
                             <div>
-                                <input type="submit" class="btn btn-primary" :disabled="newIngredient.item.length ==0 || newIngredient.quantity.length ==0 || newIngredient.measure.length ==0" value="save">
-                                <input type="button" class="btn btn-primary" v-on:click="cancelIngredient" value="cancel">
+                                <input type="submit" class="btn btn-secondary" :disabled="newIngredient.item.length ==0 || newIngredient.quantity.length ==0 || newIngredient.measure.length ==0" value="save">
+                                <input type="button" class="btn btn-secondary" v-on:click="cancelIngredient" value="cancel">
                             </div> 
                         </form> 
                     </div> 
@@ -123,16 +121,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .added-ingredients {
     list-style-type: none;
 }
 #new-recipe {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+
 }
+#btn-secondary{
+    margin:60px !important;
+}
+
 </style>

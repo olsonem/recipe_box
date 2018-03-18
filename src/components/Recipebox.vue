@@ -1,7 +1,6 @@
 <template>
 <div id="recipes" class="container col-md-10 col-md-offset-1">
   <div id="recipebox" class="container">
-    <h1 class="recipebox-title">Recipe Box</h1>  
       <div class="container recipe-list">
         <table class="table table-fixed">
           <thead>
@@ -13,7 +12,7 @@
           <tbody>
             <tr v-for="(recipe, index) in recipes" v-bind:key="index">
               <td class="col-xs-9">{{recipe.title}}</td>
-              <td class="col-xs-3"><span class="btn btn-secondary view" aria-hidden="true" v-on:click="showDetail(recipe)"><icon class="icon" name="eye"></icon></span></td>
+              <td class="col-xs-3"><span class="btn btn-secondary" aria-hidden="true" v-on:click="showDetail(recipe)"><icon class="icon" name="eye"></icon></span></td>
             </tr>
           </tbody>
         </table>
@@ -78,15 +77,7 @@ export default {
     
 }
 
-.recipebox-title{
-    font-family: 'Calligraffitti', cursive;
-    margin-top: 15px;
-  
-}
 
-#view {
-  
-  background-color: #6b7a8f !important;
-}
+
 
 </style>
